@@ -14,7 +14,7 @@
         }
         
         function playRound() {
-            let playerInput = prompt('Please input "rock, paper or scissors" to play.', 'rock');
+            let playerInput = prompt('Please enter "rock, paper or scissors" to play.');
             playerInput = playerInput.toLowerCase();
             if (playerInput != 'rock' && playerInput != 'paper' && playerInput != 'scissors') {
                 alert('Error. Please input correct stance.');
@@ -37,7 +37,7 @@
                 let result = playRound();
                 if (result == 'Computer Wins.') {compScore++; console.log(result); alert("Computer won this round."); if (compScore == 5) {alert("Computer Wins!");}}
                 else if (result == 'You Win.') {playerScore++; console.log(result); alert("You won this round."); if (playerScore == 5) {alert("You Win!");}}
-                else {console.log(result)}
+                else {console.log(result); alert("This round ends in a draw.");}
             }
         }
 
