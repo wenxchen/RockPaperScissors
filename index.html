@@ -1,11 +1,45 @@
 <!DOCTYPE html>
+<head>
+    <title>
+        TOP Rock Paper Scissors Project
+    </title>
+</head>
 <body>
     <script>
         function computerPlay() {
             let random = Math.random() * 3;
-            return random < 1 ? "Rock" 
-            : random < 2 ? "Paper"
-            : "Scissors";
+            return random < 1 ? "rock" 
+            : random < 2 ? "paper"
+            : "scissors";
+        }
+        
+        function playRound() {
+            let playerInput = prompt('Please input "rock, paper or scissors" to play.');
+            playerInput = playerInput.toLowerCase();
+            if (playerInput != 'rock' && playerInput != 'paper' && playerInput != 'scissors') {
+                alert('Error. Please input correct stance.');
+                return 'error';
+            }
+            else return (playerInput == 'rock' && computerPlay() == 'rock') ? 'Draw.'
+            : (playerInput == 'rock' && computerPlay() == 'paper') ? 'Computer Wins.'
+            : (playerInput == 'rock' && computerPlay() == 'scissors') ? 'You Win.'
+            : (playerInput == 'paper' && computerPlay() == 'rock') ? 'You Win.'
+            : (playerInput == 'paper' && computerPlay() == 'paper') ? 'Draw.'
+            : (playerInput == 'paper' && computerPlay() == 'scissors') ? 'Computer Wins.'
+            : (playerInput == 'scissors' && computerPlay() == 'rock') ? 'Computer Wins.'
+            : (playerInput == 'scissors' && computerPlay() == 'paper') ? 'You Win.'
+            : 'Draw.';
+        }
+
+        function game() {
+            alert("Welcome to a game of rock paper scissors! The winner will be decided by 5 wins!")
+            for (let playerScore = 0, compScore = 0; playerScore < 5 && compScore < 5;) {
+                let result = playRound();
+                if (result == 'Computer Wins.') {compScore++; console.log(result); if (compScore == 5) {alert("Computer Wins!")}}
+                else if (result == 'You Win.') {playerScore++; console.log(result); if (playerScore == 5) {alert("You Win!")}}
+                else {console.log(result)}
+            }
+            
         }
     </script>
 </body>
@@ -13,20 +47,20 @@
 <!--
     Your game is going to play against the computer, so begin with a function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
     We’ll use this function in the game to make the computer’s play.
-Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - 
+Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerInput and computerPlay() - 
 and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
 
     make your function case insensitive (so users can input rock, ROCK, RocK or any other variation)
 
     Important note: you want to return the results of this function call, not console.log() them. To test this function console.log the results:
 
-    function playRound(playerSelection, computerSelection) {
+    function playRound(playerInput, computerPlay()) {
     	// your code here!
     }
 
-    const playerSelection = 'rock'
-    const computerSelection = computerPlay()
-    console.log(playRound(playerSelection, computerSelection))
+    const playerInput = 'rock'
+    const computerPlay() = computerPlay()
+    console.log(playRound(playerInput, computerPlay()))
 
     ​
 
