@@ -1,46 +1,33 @@
 <!DOCTYPE html>
+
 <head>
-    <title>
-        TOP Rock Paper Scissors Project
-    </title>
+    <meta charset="utf-8">
+    <title>The Odin Project Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script>
-        function computerPlay() {
-            let random = Math.random() * 3;
-            return random < 1 ? "rock" 
-            : random < 2 ? "paper"
-            : "scissors";
-        }
-        
-        function playRound() {
-            let playerInput = prompt('Please enter "rock, paper or scissors" to play.');
-            playerInput = playerInput.toLowerCase();
-            if (playerInput != 'rock' && playerInput != 'paper' && playerInput != 'scissors') {
-                alert('Error. Please input correct stance.');
-                return 'error';
-            }
-            else return (playerInput == 'rock' && computerPlay() == 'rock') ? 'Draw.'
-            : (playerInput == 'rock' && computerPlay() == 'paper') ? 'Computer Wins.'
-            : (playerInput == 'rock' && computerPlay() == 'scissors') ? 'You Win.'
-            : (playerInput == 'paper' && computerPlay() == 'rock') ? 'You Win.'
-            : (playerInput == 'paper' && computerPlay() == 'paper') ? 'Draw.'
-            : (playerInput == 'paper' && computerPlay() == 'scissors') ? 'Computer Wins.'
-            : (playerInput == 'scissors' && computerPlay() == 'rock') ? 'Computer Wins.'
-            : (playerInput == 'scissors' && computerPlay() == 'paper') ? 'You Win.'
-            : 'Draw.';
-        }
-
-        function game() {
-            alert("Welcome to a game of rock paper scissors! The winner will be decided by 5 wins!")
-            for (let playerScore = 0, compScore = 0; playerScore < 5 && compScore < 5;) {
-                let result = playRound();
-                if (result == 'Computer Wins.') {compScore++; console.log(result); alert("Computer won this round."); if (compScore == 5) {alert("Computer Wins!");}}
-                else if (result == 'You Win.') {playerScore++; console.log(result); alert("You won this round."); if (playerScore == 5) {alert("You Win!");}}
-                else {console.log(result); alert("This round ends in a draw.");}
-            }
-        }
-
-        game();
-    </script>
+    <h1 id="title">Rock Paper Scissors</h1>
+    <h3 id="choose">Choose your weapon!</h3>
+    <div class="buttons-container">
+        <button class="button" id="rock"></button>
+        <button class="button" id="paper"></button>
+        <button class="button" id="scissors"></button>
+    </div>
+    <div class="buttons-container">
+        <img class="comp-choice" id="comp-rock" src="./images/icons8-upward-arrow-96.png">
+        <img class="comp-choice" id="comp-paper" src="./images/icons8-upward-arrow-96.png">
+        <img class="comp-choice" id="comp-scissors" src="./images/icons8-upward-arrow-96.png">
+    </div>
+    <h1 class="choice-announce">Computer Chooses</h3>
+    <div class=bottom>
+        <h2 id="announcement">Welcome to a game of rock paper scissors! The winner will be decided by 5 wins!</h3>
+        <h1 class="score">Score:</h1>
+        <div class="scores-container">
+            <h1 id="you">You: 0</h3>
+            <h1 id="computer">Computer: 0</h3>
+        </div>
+    </div>
+    <script src="javascript.js"></script>
+    <p class="footer">Icons are from <a href="https://icons8.com">Icons8.com</a></p>
 </body>
