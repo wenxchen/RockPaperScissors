@@ -19,9 +19,11 @@ I used clearTimeout() to fix an issue with the computer action popping up after 
 Along with these problems, I found myself stuck for a bit wondering just how much of my code I should refactor versus writing from scratch. I really had trouble wrapping my head around how to reuse the original game loop when in the end the loop wasn't even necessary given my use of listeners.
 
 ## To Do
-I feel like the look of the game could use a lot of work - maybe add in at least some background colors and also the color of the button pressed doesn't stay that way if you click elsewhere. That's a simple element.classList.add("clickedButton"). I wish I did that instead of using CSS element:focus.
+~~I feel like the look of the game could use a lot of work - maybe add in at least some background colors and also the color of the button pressed doesn't stay that way if you click elsewhere. That's a simple element.classList.add("clickedButton"). I wish I did that instead of using CSS element:focus.~~ Went back to fix this.
 
-There's also a lot of JS that I could split into more functions to further improve readability but that comes at the cost of either global variables for elements or repeating myself which increases lines of code. At the end of the day, I'm not sure what exactly I should do yet.
+There's also ~~a lot of~~ edit: some JS that I could split into more functions to further improve readability but that comes at the cost of either global variables for elements or repeating myself which increases lines of code. At the end of the day, I'm not sure what exactly I should do yet.
+
+Edit: Picked up some low lying fruit fixes like the button class and a background color; wound up adding a game reset function to make the last game state clearer instead of resetting the game board after a win immediately.
 
 ## Technologies
 Built with HTML, CSS, and JS. Utilizes icons from [Icons8](https://icons8.com)

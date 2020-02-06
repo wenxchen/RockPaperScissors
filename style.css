@@ -6,6 +6,7 @@ h1, h2, h3 {
 body {
     min-width: 450px;
     min-height: 700px;
+    background-color: lightslategray;
 }
 
 .buttons-container {
@@ -44,15 +45,10 @@ body {
     transition: all .25s ease;
 }
 
-.button:hover {
+.button-clicked {
     outline:none;
     transform: scale(1.12);
     background-color: lightcoral;
-}
-
-.button:focus {
-    outline:none;
-    background-color: rgb(255, 121, 68);
 }
 
 .button::-moz-focus-inner { /*to get rid of firefox dotted box on focus*/
