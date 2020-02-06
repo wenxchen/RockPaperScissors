@@ -69,7 +69,7 @@ function game(winnerMessage) {
             clearTimeout(removeComputerChoiceTimeout);
             compScore = 0;
             playerScore = 0;
-            announce.innerHTML = "Computer wons the series. Play again?";
+            announce.innerHTML = "Computer won the series. Play again?";
             computerHTML.innerHTML = `Computer: ${compScore}`;
             playerHTML.innerHTML = `You: ${playerScore}`;
         }
